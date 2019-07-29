@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.fragment.BillBoyFragment">
+
+    <q.rorbin.verticaltablayout.VerticalTabLayout
+            android:id="@+id/tab_vertical"
+            android:layout_width="@dimen/dp_74"
+            android:layout_height="match_parent"
+            app:indicator_width="@dimen/dp_2"
+            app:indicator_color="#0B87FA"
+            android:background="#F5F5F5"
+            app:tabTextAppearance="@style/MyVeriticalTabLayout"
+            app:tab_height="@dimen/dp_50"
+            app:tab_mode="scrollable" />
+
+     <android.support.v7.widget.RecyclerView
+            android:id="@+id/book_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+     </android.support.v7.widget.RecyclerView>
+</LinearLayout>

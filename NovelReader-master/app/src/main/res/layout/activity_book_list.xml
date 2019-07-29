@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:background="@color/white"
+	android:fitsSystemWindows="true">
+
+	<android.support.v7.widget.Toolbar
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/toolbar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/white"
+		android:fitsSystemWindows="true"
+		android:minHeight="?attr/actionBarSize"
+		android:theme="@style/Theme.ToolBar.Menu">
+
+		<ImageView
+			android:id="@+id/back"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@mipmap/fanhui1" />
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:text="主题书单"
+			android:textSize="@dimen/sp_18" />
+	</android.support.v7.widget.Toolbar>
+
+	<android.support.design.widget.TabLayout
+		android:layout_height="?attr/actionBarSize"
+		android:layout_width="wrap_content"
+		app:tabTextColor="#333333"
+		app:tabIndicatorFullWidth="false"
+		app:tabSelectedTextColor="@color/colorPrimary"
+		app:tabIndicatorColor="@color/colorPrimary"
+		android:background="@color/white"
+		android:id="@+id/tab_tl_indicator">
+	</android.support.design.widget.TabLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		app:layout_behavior="@string/appbar_scrolling_view_behavior" >
+		
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="40dp"
+			android:gravity="center_vertical"
+			android:orientation="horizontal"
+			android:background="@color/nb.theme.background">
+			
+			<android.support.v7.widget.RecyclerView
+				android:id="@+id/book_list_rv_tag_horizon"
+				android:layout_width="0dp"
+				android:layout_marginLeft="@dimen/dp_8"
+				android:layout_height="match_parent"
+				android:layout_weight="1">
+			</android.support.v7.widget.RecyclerView>
+			
+			<CheckBox
+				android:id="@+id/book_list_cb_filter"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="15dp"
+				android:layout_marginRight="10dp"
+				android:textColor="@color/colorPrimary"
+				android:button="@null"
+				android:text="筛选"/>
+		
+		</LinearLayout>
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/nb.divider.line"
+			android:background="@color/gray"/>
+		<FrameLayout
+			android:id="@+id/book_list_fl"
+			android:background="@color/white"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+			
+			<android.support.v4.view.ViewPager
+				android:id="@+id/tab_vp"
+				android:layout_width="match_parent"
+				android:background="@color/white"
+				android:layout_height="match_parent">
+			</android.support.v4.view.ViewPager>
+			
+			<android.support.v7.widget.RecyclerView
+				android:id="@+id/book_list_rv_tag_filter"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:visibility="gone"
+				android:background="#B2B2B2"
+				android:paddingLeft="10dp"
+				android:paddingRight="10dp">
+			</android.support.v7.widget.RecyclerView>
+		</FrameLayout>
+	</LinearLayout>
+</LinearLayout>

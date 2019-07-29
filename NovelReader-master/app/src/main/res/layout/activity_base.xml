@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.newbiechen.ireader.ui.activity.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:minHeight="?attr/actionBarSize"
+        android:fitsSystemWindows="true"
+        android:theme="@style/Theme.ToolBar.Menu">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="完本"
+            android:textSize="@dimen/sp_18"
+            android:layout_gravity="center"
+            android:textColor="#333333"/>
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/fanhui1"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <q.rorbin.verticaltablayout.VerticalTabLayout
+        android:id="@+id/tab_tl"
+        android:layout_width="@dimen/dp_74"
+        android:layout_height="match_parent"
+        app:indicator_width="@dimen/dp_2"
+        app:indicator_color="#0B87FA"
+        android:background="#F7F7F7"
+        app:tabTextAppearance="@style/MyVeriticalTabLayout"
+        app:tab_height="@dimen/dp_50"
+        app:tab_mode="scrollable" />
+
+    <android.support.v4.view.ViewPager
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:id="@+id/tab_vp"
+        android:layout_weight="1">
+    </android.support.v4.view.ViewPager>
+</LinearLayout>

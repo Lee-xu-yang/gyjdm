@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/book_shelf_rv_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    app:layout_scroll_empty="@layout/view_empty_book_shelf">
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_shelf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tabIndicatorFullWidth="false"
+        app:tabTextColor="#333333"
+        android:elevation="@dimen/dp_0"
+        app:tabIndicatorColor="#ff0b87fa"
+        app:tabSelectedTextColor="#ff0b87fa"
+        android:layout_gravity="center"
+        app:tabTextAppearance="@style/TabLayoutTextStyle">
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/vp"></android.support.v4.view.ViewPager>
+</LinearLayout>

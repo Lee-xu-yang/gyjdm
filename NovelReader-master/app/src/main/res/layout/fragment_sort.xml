@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".fragment.BookSortFragment">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_sort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tabIndicatorFullWidth="false"
+            app:tabTextColor="#333333"
+            android:elevation="@dimen/dp_0"
+            android:layout_centerInParent="true"
+            app:tabIndicatorColor="#ff0b87fa"
+            app:tabSelectedTextColor="#ff0b87fa"
+            app:tabTextAppearance="@style/TabLayoutTextStyle">
+        </android.support.design.widget.TabLayout>
+
+        <ImageView
+            android:id="@+id/search_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tab_sort"
+            android:layout_marginLeft="@dimen/dp_200"
+            android:layout_marginTop="@dimen/dp_18"
+            android:src="@mipmap/sousuo2" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="#e5e5e5"
+        android:layout_marginTop="@dimen/dp_6"/>
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp_19"
+        android:id="@+id/vp">
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>

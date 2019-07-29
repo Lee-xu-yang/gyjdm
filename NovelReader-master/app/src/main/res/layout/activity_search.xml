@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:background="#ffffff"
+	android:layout_height="match_parent"
+	android:fitsSystemWindows="true">
+
+	<!--搜索框-->
+	<LinearLayout
+		android:id="@+id/search"
+		android:layout_width="match_parent"
+		android:layout_height="?attr/actionBarSize"
+		android:background="#0b87fa"
+		android:orientation="horizontal"
+		android:gravity="center_vertical"
+		android:paddingTop="10dp"
+		android:paddingBottom="10dp"
+		android:elevation="5dp">
+		
+		<ImageView
+			android:id="@+id/search_iv_back"
+			android:layout_width="@dimen/dp_30"
+			android:layout_height="wrap_content"
+			android:src="@drawable/ic_search_back_normal"
+			android:layout_marginLeft="@dimen/dp_6"
+			android:padding="6dp"
+			android:scaleType="centerInside"/>
+		
+		<LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:orientation="horizontal"
+			android:gravity="center_vertical"
+			android:padding="8dp"
+			android:background="@drawable/shape_common_gray_corner">
+			
+			<EditText
+				android:id="@+id/search_et_input"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:textCursorDrawable="@color/red"
+				android:textSize="14sp"
+				android:hint="搜索..."
+				android:singleLine="true"
+				android:maxLines="1"
+				android:imeOptions="actionSearch"
+				android:background="@color/white"/>
+			
+			<ImageView
+				android:id="@+id/search_iv_delete"
+				android:layout_width="20dp"
+				android:layout_height="20dp"
+				android:layout_marginLeft="6dp"
+				android:src="@drawable/ic_delete"
+				android:visibility="invisible"
+				tools:visibility="visible"/>
+		</LinearLayout>
+		
+		<ImageView
+			android:id="@+id/search_iv_search"
+			android:layout_width="@dimen/dp_30"
+			android:layout_height="match_parent"
+			android:src="@drawable/ic_search"
+			android:textColor="#ffffff"
+			android:layout_marginLeft="@dimen/dp_6"
+			android:layout_marginRight="@dimen/dp_6"
+			android:padding="6dp"
+			android:scaleType="centerInside"/>
+	</LinearLayout>
+	
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="1px"
+		android:background="@color/nb.divider.narrow"
+		android:layout_below="@id/search"/>
+		
+		<!--搜索显示界面-->
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:paddingLeft="10dp"
+			android:layout_below="@id/search"
+			android:paddingRight="10dp"
+			android:orientation="vertical">
+		
+			<RelativeLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="@dimen/dp_18"
+				android:gravity="center_vertical">
+				
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="热门搜索"
+					android:textSize="16sp"
+					android:textColor="#333333"
+					android:layout_centerVertical="true" />
+				
+				<TextView
+					android:id="@+id/search_book_tv_refresh_hot"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentRight="true"
+					android:drawablePadding="2dp"
+					android:gravity="center_vertical"
+					android:text="换一批" />
+			</RelativeLayout>
+
+			<!--占个位置-->
+			<me.gujun.android.taggroup.TagGroup
+				style="@style/TagGroup"
+				android:id="@+id/search_tg_hot"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="12dp"
+				app:atg_isAppendMode="false"
+				app:atg_borderColor="@color/gray"
+				app:atg_verticalSpacing="15dp"
+				app:atg_horizontalSpacing="8dp"
+				app:atg_verticalPadding="8dp"
+				app:atg_textColor="@color/black">
+			</me.gujun.android.taggroup.TagGroup>
+
+			<RelativeLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="17dp"
+				android:gravity="center_vertical">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="热门排行"
+					android:textSize="16sp"
+					android:textColor="#333333"
+					android:layout_centerVertical="true"
+					android:layout_marginTop="@dimen/dp_18"/>
+
+			</RelativeLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:layout_marginTop="@dimen/dp_4">
+				<RelativeLayout
+                    android:id="@+id/hot_bang"
+					android:layout_width="@dimen/dp_0"
+					android:layout_weight="1"
+					android:layout_height="wrap_content">
+
+					<ImageView
+						android:layout_width="@dimen/dp_62"
+						android:layout_height="@dimen/dp_62"
+						android:src="@mipmap/hot" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="玄幻"
+						android:textColor="#ffffff"
+						android:textSize="@dimen/sp_14"
+						android:layout_centerInParent="true"/>
+
+				</RelativeLayout>
+				<RelativeLayout
+                    android:id="@+id/qianli"
+					android:layout_width="@dimen/dp_0"
+					android:layout_weight="1"
+					android:layout_height="wrap_content">
+
+					<ImageView
+						android:layout_width="@dimen/dp_62"
+						android:layout_height="@dimen/dp_62"
+						android:src="@mipmap/qianli" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="武侠"
+						android:textColor="#ffffff"
+						android:textSize="@dimen/sp_14"
+						android:layout_centerInParent="true"/>
+
+				</RelativeLayout>
+				<RelativeLayout
+                    android:id="@+id/up"
+					android:layout_width="@dimen/dp_0"
+					android:layout_weight="1"
+					android:layout_height="wrap_content">
+
+					<ImageView
+						android:layout_width="@dimen/dp_62"
+						android:layout_height="@dimen/dp_62"
+						android:src="@mipmap/biaosheng" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="都市"
+						android:textColor="#ffffff"
+						android:textSize="@dimen/sp_14"
+						android:layout_centerInParent="true"/>
+
+				</RelativeLayout>
+				<RelativeLayout
+                    android:id="@+id/wanjie"
+					android:layout_width="@dimen/dp_0"
+					android:layout_weight="1"
+					android:layout_height="wrap_content">
+
+					<ImageView
+						android:layout_width="@dimen/dp_62"
+						android:layout_height="@dimen/dp_62"
+						android:src="@mipmap/wanjie" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="科幻"
+						android:textColor="#ffffff"
+						android:textSize="@dimen/sp_14"
+						android:layout_centerInParent="true"/>
+
+				</RelativeLayout>
+				<RelativeLayout
+                    android:id="@+id/good"
+					android:layout_width="@dimen/dp_0"
+					android:layout_weight="1"
+					android:layout_height="wrap_content">
+
+					<ImageView
+						android:layout_width="@dimen/dp_62"
+						android:layout_height="@dimen/dp_62"
+						android:src="@mipmap/haoping" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="女尊"
+						android:textColor="#ffffff"
+						android:textSize="@dimen/sp_14"
+						android:layout_centerInParent="true"/>
+
+				</RelativeLayout>
+			</LinearLayout>
+		</LinearLayout>
+
+	<include
+		layout="@layout/activity_refresh_list"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_below="@id/search"
+		android:layout_marginTop="-5dp"></include>
+
+</RelativeLayout>
